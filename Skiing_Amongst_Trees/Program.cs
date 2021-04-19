@@ -21,11 +21,11 @@ namespace Skiing_Amongst_Trees
             string upDown = Console.ReadLine();
 
             //checks if inputs have numbers in it
-            if (!string.IsNullOrEmpty(upDown)|| !string.IsNullOrEmpty(leftRight))
+            /*if (!string.IsNullOrEmpty(upDown)|| !string.IsNullOrEmpty(leftRight))
             {
                 System.Console.WriteLine("Not a valid input!");
                 Environment.Exit(0);
-            }
+            }*/
                 
             
             Ski skiSlope = new Ski(Convert.ToInt32(leftRight), Convert.ToInt32(upDown));

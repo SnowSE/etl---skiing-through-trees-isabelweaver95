@@ -28,7 +28,7 @@ namespace Skiing_Amongst_Trees
 
             //read the file//
             //make sure to change the path
-            System.IO.StreamReader file = new System.IO.StreamReader(@"C:\Users\isabel.weaver\Source\Repos\etl---skiing-through-trees-isabelweaver95\Skiing_Amongst_Trees\TreeMap.txt");
+            System.IO.StreamReader file = new System.IO.StreamReader(@"C:\Users\isabel.weaver\source\repos\etl---skiing-through-trees-isabelweaver95\skiGuy\Skiing_Amongst_Trees\TreeMap.txt");
             while ((line = file.ReadLine()) != null)
             {
                 //Console.WriteLine(line);
