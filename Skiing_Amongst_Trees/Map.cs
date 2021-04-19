@@ -11,31 +11,39 @@ namespace Skiing_Amongst_Trees
         private int x = 0;
         private int y = 0;
 
+
+        //constructor 
         public Map()
         {
             hill = extract(hill);
         }
 
+
+
+        //this funtion is extracting info from the txt file
         private char[,] extract(char[,] hill)
         {
             string line;
 
+
+            //read the file//
+            //make sure to change the path
             System.IO.StreamReader file = new System.IO.StreamReader(@"C:\Users\isabel.weaver\Source\Repos\etl---skiing-through-trees-isabelweaver95\Skiing_Amongst_Trees\TreeMap.txt");
             while ((line = file.ReadLine()) != null)
             {
                 //Console.WriteLine(line);
                 foreach (char item in line)
                 {
+
                     checkCords();
+
                     hill[y, x] = item;
-                    //System.Console.WriteLine(hill[y, x]);
                     x++;
 
-
+                    //this changes the row when x= 31 
                     if (x == 31)
                     {
                         y++;
-                        //System.Console.WriteLine(y);
                     }
                 }
             }
@@ -44,6 +52,7 @@ namespace Skiing_Amongst_Trees
         }
 
 
+        //I thought we might use this if statements more so we put it into a function
         private void checkCords()
         {
             if (x == 31)
@@ -55,6 +64,8 @@ namespace Skiing_Amongst_Trees
                 y = 0;
             }
         }
+
+        //prints
         public void print()
         {
             for (int i = 0; i < 323; i++)
@@ -68,16 +79,14 @@ namespace Skiing_Amongst_Trees
             }
         }
 
+
+        //this function counts the trees we hit
         public int isTree(int x, int y)
         {
-            if (hill[y, x] == '.')
-            {
-                hill[y, x] = 'O';
-            }
-
+            
+            //checks if we hit a tree and counts it
             if (hill[y, x] == '#')
             {
-                hill[y, x] = 'X';
                 count++;
                 if (y == 322)
                 {
@@ -86,6 +95,8 @@ namespace Skiing_Amongst_Trees
             }
             return count;
         }
+
+        //this gets count and hill
         public char[,] getHill()
         {
             return hill;

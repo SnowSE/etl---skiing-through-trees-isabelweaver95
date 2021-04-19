@@ -18,6 +18,7 @@ namespace Skiing_Amongst_Trees
             slopeX = slopex;
             slopeY = slopey;
 
+            //check if the input is a negitave number
             if (slopeX <= 0 || slopeY <= 0)
             {
                 System.Console.WriteLine("Invalid, negitive slope! Cant go up!");
@@ -27,6 +28,8 @@ namespace Skiing_Amongst_Trees
 
         }
 
+
+        //this is the get position functions. they just return the where the skier is
         public int getPositionX()
         {
             return positionX;
@@ -36,6 +39,8 @@ namespace Skiing_Amongst_Trees
             return positionY;
         }
 
+
+        //this is moving the postion of the skier
         public void movePosition()
         {
 
@@ -48,11 +53,13 @@ namespace Skiing_Amongst_Trees
 
             if (positionX >= 31)
             {
+                //looping back to the beginning of the positionX
                 positionX = (positionX - 31);
 
             }
             else if (positionY + slopeY >= 322)
             {
+                //this just makes it so the positionY when grater than the bounds it will equal 322.S
                 positionY = 322;
             }
         }
